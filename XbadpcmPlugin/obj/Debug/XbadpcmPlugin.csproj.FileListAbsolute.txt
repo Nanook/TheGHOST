@@ -1,0 +1,19 @@
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\XbadpcmPlugin.dll
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\XbadpcmPlugin.pdb
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\DirectShowLib-2005.dll
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\TheGHOSTCore.dll
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\QueenBeeParser.dll
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\TheGHOSTCore.pdb
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\bin\Debug\QueenBeeParser.pdb
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\obj\Debug\ResolveAssemblyReference.cache
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\obj\Debug\XbadpcmPlugin.dll
+D:\_Backup\My Work\Development\C#\TheGHOST\XbadpcmPlugin\obj\Debug\XbadpcmPlugin.pdb
+D:\GitHub\TheGHOST\XbadpcmPlugin\bin\Debug\XbadpcmPlugin.dll
+D:\GitHub\TheGHOST\XbadpcmPlugin\bin\Debug\XbadpcmPlugin.pdb
+D:\GitHub\TheGHOST\XbadpcmPlugin\bin\Debug\TheGHOSTCore.dll
+D:\GitHub\TheGHOST\XbadpcmPlugin\bin\Debug\QueenBeeParser.dll
+D:\GitHub\TheGHOST\XbadpcmPlugin\bin\Debug\TheGHOSTCore.pdb
+D:\GitHub\TheGHOST\XbadpcmPlugin\bin\Debug\QueenBeeParser.pdb
+D:\GitHub\TheGHOST\XbadpcmPlugin\obj\Debug\ResolveAssemblyReference.cache
+D:\GitHub\TheGHOST\XbadpcmPlugin\obj\Debug\XbadpcmPlugin.dll
+D:\GitHub\TheGHOST\XbadpcmPlugin\obj\Debug\XbadpcmPlugin.pdb

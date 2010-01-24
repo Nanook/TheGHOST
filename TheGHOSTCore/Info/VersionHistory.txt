@@ -1,0 +1,576 @@
+﻿
+Coop Tracks
+-----------
+Sabotage
+Reptilia
+Suck My Kiss
+Cities on Flame with Rock and Roll
+Helicopter
+Monsters
+
+
+Changed since last version
+--------------------------
+
+TheGHOSTWiiIsoTool.exe v0.17
+- Fixed issue when using an ISO with no update partition. No changes were made to the ISO when updating the data partition.
+- Fixed Windows 7 Notes Viewer list box flickering
+
+TheGHOST.exe v0.45
+- Fixed issue where background audio wouldn't create preview
+- Fixed issue where artists or track titles containing "/" caused a sub folder to be created when saving. 
+- Fixed double blanking of the notes window - tcm1998
+
+TheGHOSTCore.dll v0.47
+
+
+
+TheGHOST.exe v0.44
+- Fixed IMA encoder. Songs with mono audio were causing the load forever bug. (Stereo to mono was ok)
+- Added a cancel button to the Exit message
+- Fixed Track Icon removing / greying out when removing audio.
+- Fixed Issue that allowed the notes viewer to open with no audio.
+
+TheGHOSTCore.dll v0.47
+- Added Volume normalisation when only song audio is specified. This adjusts audio levels across all songs to be almost the same (it's not 100% accurate, but makes a big difference)
+- Added volume normalisation for background audio
+- Fixed Sync issues that can occur when only change audio only or notes only settings. TheGHOST will now generate both if required. 
+- Fixed audio mixing for preview - not as quiet at is was, better clipping and modifies volume according to settings.
+- Fixed crash when editing Project song and applying settings.
+- Added Smart Map support for mid tracks named T1 GEMS
+- Added new FF type to Mid parser.  It was crashing when sub type 4 was found.
+- Changed the PreviewFadeLength default to 1 second
+- Fixed Save and Restore of background audio volume
+- Fixed Preview having incorrect volume if track was selected for editing.
+- Fixed volume calulation for Background Audio
+- Fixed Items not being applied when the project's LastApplied dates had been set in the future
+- Added smarter file deleting, instead of crashing.
+
+TheGHOSTWiiIsoTool.exe v0.16
+- Added Exception handling around delete failure
+
+
+
+TheGHOST.exe v0.43
+- Added a background thread when processing on the Progress Screen. This means the window is responsive while procesing.
+
+TheGHOSTCore.dll v0.46
+- Fixed bug in Smart Mode where importing TGS files failed to mark the song as updated.
+- Fixed bug when importing settings that audio volume got forced to 100.
+- Changed volume calculation when importing song, guitar and rhythm (now halves volume) avoids distortion and now sounds correct
+- Added 33075 to sample rate as this is the true GH3 sample rate.
+- Fixed memory leak in the FFmpeg plugin.
+- Changed ForceDownSample to 33075 which is the GH3 default quality.  Songs with song, guitar and rhythm with a higher sample rate cause GH not to play the song audio on second song played.
+
+TheGHOSTWiiIsoTool.exe v0.15
+- Changed ISO tool to use IMA ADPCM and FFMpeg plugins
+- Fixed bug that caused ISOs with no update partition to fail (like from WBFS drives)
+
+
+
+TheGHOST.exe v0.42
+- Added default song text for store bonus songs
+- Fixed Working folder so it's now auto populated when creating a new project
+- Removed 4 Right-Click items from Notes Mappings list.
+- Added Force No Star Power item to Right-Click items from Notes Mappings list.
+- Added default option to set Force No Star Power.
+- Added a Reapply All check box to the Project Screen to force all setting to be applied (to a new/clean ISO for example).
+- Added File check that Background Audio files exist before continuing to next screen.
+- Added a message to alert the user that project plugins are missing or not set.
+- Added a new IMA ADPCM Plugin to export audio in to Guitar Hero. This does not require the XBADPCM or WavDest. (Thanks to Aaron and Tueidj of RawkSD for help and advice)
+- Added a new FFMpeg Plugin to import many audio formats without Windows Audio (Direct Show)  or WavDest (Thanks to Aaron or RawkSD for help and code)
+- Added a new File System Plugin to allow TheGHOST to extract and replace files in the file system.  This can be used with the IsoTool when manual is set to Yes.
+- Added error message when audio fails to decode from Track Select screen.
+- Fixed Create project so that it removes any existing project. If user chooses to replace it.
+- Added ForceMono option
+- Added ForceDownSample (with sample rate) so that if audio is higher quality than this value it is down sampled. 
+
+
+TheGHOSTCore.dll v0.45
+- Added Tier Editing (GH3 and GHA). You can now remove tiers then add them back again later. Songs are kept in a consistent order  ;-)
+   - Lots of rules to this one.  Check the FAQ
+- Changed project loading and saving so he songs aren't dependant on the song ID, now you can apply GH3 projects to GHA for example.
+- Added Death drain support. Automatically set to 11 seconds from the end of the song
+- Fixed the Track Select screen so it now prompts to auto apply items that we applied and set to changed.
+- Fixed SP notes count calculation (this cause a lot of 1 note sp sections to be removed)
+- Fixed unplayable/invisible generated notes that occured in easy and medium.
+- Fixed time sig calculation in Mid notes imports
+- Added GH3 CoOp set cloning from Career setlist when tiers are edited
+- Changed audio preview volume to default to 100%
+- Added GH3 CoOp tier name modifying. They are auto set to that of the Career tiers when both set lists have the same amount of tiers
+- Added error message when Game is incorrectly set and QB cannot be parsed. 
+- Added default song text for store bonus songs
+- Added support for default option to set Force No Star Power.
+- Changed name of UnlockCareerTiers to UnlockSetlists as it now unlocks the CoOp setlist also
+- Added support for Reapply All to force everything to be applied.
+- Added silent and duplicate guitar & song check to the Finalise Settings checks.
+- Fixed a bug that was causing extra wav processing, this should speed up the end processing.
+- Added check to add a practice section marker at the position of the first note if the first maker is after the notes start.
+- Added ForceMono ability
+- Added ForceDownSample ability so that if audio is higher quality than this value it is down sampled.
+
+
+TheGHOSTWiiIsoTool.exe v0.14
+- Added Tier Editing (GH3 and GHA). Set the amount of tiers and how many songs in each.
+- Changed name of UnlockCareerTiers to UnlockSetlists as it now unlocks the CoOp setlist also
+- Changed the ManualEdit message to advise that TheGHOST can be used with the File SYstem Plugin.
+- Changed the working folder partition directory names to PartitionData and PartitionUpdate from Partition2 and Partition1 respectively.
+
+TheGHOSTAudioTool.exe v0.6
+- Added message to inform user that this is not required unless they are going to use the Windows Audio or XBADPCM plugin
+- Changed install of items so they are copied to the system folder before install.
+
+
+
+TheGHOST.exe v0.41
+- Added full project creation to the Track Select Screen
+- Added folder drag and drop to the Tracklist Screen
+- Added folder drag to reorder the Tracklist Screen
+- Added Green (Nothing changed) and Blue (Item Changed) icons to the Tracklist Screen
+- Added context menu to the Tracklist Screen to remove mapped settings etc
+- Added message boxes to show when the app is decoding audio etc
+- Added "..." button between Back and Next buttons to jump to any song for editing
+- Added Tier and Song number to Track Edit and Notes Edit screen titles
+- Added a green tick to the notes file used to base the Frets etc on.
+- Fixed Track Screen and Notes Screen title so it updates when moving between screens
+- Fixed crash when un/checking enable guitar/rhythm when playing preview
+- Changed the saving of the Working folder so that it is saved with the application settings not the project
+- Changed the progress text on the last screen so that the Artist and Title are shown where available
+- Tested buying songs from the shop in GH3, works fine.  If you have issues, start again with a fresh ISO.
+- Fixed notes viewer (again).  It should play smoothly on PCs where it played for 1 second then stopped.
+- Fixed the playing of the Background audio preview.  Sometimes just played silence.
+- Fixed Background audio Preview settings getting blanked.
+- Added the disabling of the preview settings while decoding audio / creating preview
+- Fixed Background audio as it was failing to stop playing when changing start offset (Timer was firing twice)
+- Fixed Background audio so you can now switch between BG audio tracks While the preview is playing
+- Fixed bug that allowed the dragging of folders on to Background audio Add Audio icon.
+- Changed move buttons so they are greyed when messages are shown
+- Fixed clearing of the working folders on exit, previously left some files behind
+- Changed bik movie to a much nicer graphic.  Thanks to mvit from #WiiBanner on EFNET
+- Fixed error that crashed the app when pressing Next or Back twice quickly
+- Fixed WiiScrubberPlugin so now ISOs can be used without an update partition.
+- Improved error handling when audio conversion fails when dragging audio on to song items
+- Unfixable Bug: If ogg crashes the decoder then this cannot be caught by TheGHOST, try decoding to wav and importing that.
+- Fixed preview settings not being updated when Guitar audio was removed as it was the same as the Song Audio
+
+TheGHOSTCore.dll v0.44
+- Added full project saving/loading, all items and files
+- Added project backup when saving to prevent losing all settings if it crashes
+- Added an xml file of song settings to each song saved to the project folder. Can be imported with Smart Mode
+- Added saving of the project defaults to the project file
+- Changed old tgp format with new xml version supporting all configurable items
+- Fixed bug where you "Non career songs" wouldn't be modified
+- Changed Set List so it's now stored as in GH. TheGHOST songs are not separate.
+- Unfixable Bug: If ogg crashes the decoder then this cannot be caught by TheGHOST, try decoding to wav and importing that.
+- Fixed Preview being silent for songs where the preview start + length was after the end of the song
+- Fixed Preview being set to end of the song when preview start + length was after the end of the song (now goes to the middle) 
+- Added Audio volumes to config file for future use (values are applied, but there's no interface as yet)
+- Fixed issue where HoPo value was applied to all mid/chart files, not just one it was set on
+- Fixed bug that didn't use existing star power to generate battle power sometimes
+- Fixed issue with generated star power and face off not always having the same counts
+- Fixed crash when no guitar notes were found using Smart Map. It will now look for Rhythm, GuitarCoop and RhythmCoop in that order.
+- Fixed bug that caused ReadOnly source files to cause an exception.
+
+TheGHOSTWiiIsoTool.exe v0.13
+- Added support for ISOs without an update partition (as created by WBFS managers).
+- Added the ability to set the Disc Id (first 4 bytes of the ISO) for WBFS managers.
+- Added the ability to set the Disc Title for WBFS managers / USB Launchers.
+- Fixed bug where songs added with TheGHOST could be added to an internal list twice and crash the app.
+- Fixed Prep button as was being enabled to early while preping.
+- Fixed blanking criteria as it wasn't blanking the correct tracks.
+
+TheGHOSTBatchTool.exe v0.9
+- Discontinued as TheGHOST has the functionality built in
+
+
+
+TheGHOST.exe v0.40
+- Added SmartModeCrowdImport to config file
+- Changed HoPo property to detect default values larger then the max for the gui widget and set to default
+- Added an error message when audio fails to convert.
+- Fixed some bugs with the Track Edit screen, Smart Mode sometimes had the wrong icon and failed to accept folders.
+- Attempted to fix the bug that kills TheGHOST when the NotesViewer is closed.  (I've been unable to reproduce this)
+- Attempt to fix notes viewer displaying not responding on some PCs (I've been unable to reproduce this)
+
+TheGHOSTCore.dll v0.43
+- Fixed AudioPlayer routine to attempt to fix a reported NullReferenceException exception in the NotesViewer
+- Added bounds check on HoPo default value and set to 2.95 if condition is not met
+
+TheGHOSTBatchTool.exe v0.9
+- Added Language selection to the so that it's not fixed to English
+- Added Path checks when "Get Detail" is pressed to stop it crashing
+
+
+
+TheGHOST.exe v0.39
+- Added FPS to the Notes Viewer. It's not 100% accurate, but it's good enough.
+
+TheGHOSTCore.dll v0.42
+- Fixed AudioPlayer routine to attempt to fix a reported NullReferenceException exception in the NotesViewer
+
+TheGHOSTWiiIsoTool.exe v0.12
+- Fixed "Index out of range" bug introduced by the multipart song files.
+- Fixed GUI bug that doubled the lengths of the Title Texts
+- Added a "Read" button to read the current Disc ID from the Boot.bin
+- Changed the name of the "Set" Disc ID button to "Write"
+
+
+
+TheGHOST.exe v0.38
+- Added the ability to add more song audio files to be merged together.  To support songs split in to Song & Drums etc.
+- Added option on the project screen to have the crowd audio imported in to the song audio when Smart Mode is used.
+- Added the source filename as a tool tip on the Track Edit screen.
+- Changed the close window functionality so that it now asks to save project.
+- Changed Track Edit so it won't allow 2 of the same wav source to be added.
+
+TheGHOSTCore.dll v0.41
+- Fixed audio but that hung the front end when playing previews.
+- Added ability to handle multiple song files
+- Changed the preview creation back to combining the audio volumes rather than adding them
+- Changed the preview volume default back to 100% (edit or delete your config to apply the default)
+
+TheGHOSTBatchTool.exe v0.8
+- Added option on the project screen to have the crowd audio imported.
+
+
+
+
+
+TheGHOST.exe v0.37
+- Fixed the sync on the Notes Viewer (it knows exactly what sounds is currently being played).
+- Fixed the jerky Vista playback in the Notes Viewer (although it's a dirty hack).
+- Changed the Notes Viewer to a proper game loop.  Now shows about 100 fps.
+- Changed note triggers in the Notes Viewer so that they fade away and are always on the trigger bar.
+- Changed the HoPo setup in the Notes Viewer to stop the 295 error?
+
+TheGHOSTCore.dll v0.40
+- Changed the audio routines to feedback the buffer playback positions.
+
+
+
+TheGHOST.exe v0.36
+- Changed Export track list, it now doesn't write out empty brackets when no year is present 
+- Added an extra column to TheGhost track list it displays the Guitar Hero Id for debugging, 0 width by default 
+- Changes Track list screen, split non career songs in to their own section 
+- Added support for removing songs from the game that didn't fit in the ISO (only bonus and added songs) 
+- Added support for setting Mods (Most of the hacks from the TheGHOSTWiiIsoTool) 
+- Added support for setting Tier Names (Tier Names are set for all tiers) 
+- Added the ablility to change the background audio of the menu system. 
+- Changed Sync so it should be more accurate for the notes viewer (this is a temporary fix until a later version)
+
+TheGHOSTCore.dll v0.39
+- Added GameMods class to apply hacks etc 
+- Added support for removing songs from the game that didn't fit in the ISO 
+- Added support for setting Mods 
+- Added support for setting Tier Names (Tier Names are set for all tiers) 
+- Changed the preview combining so that it adds the audio volumes rather than averaging them. 
+- Changed Preview default volume to 80% (to accomodate the above) 
+- Fixed TalkTalkin for GHA. 
+- Fixed Star Power not being generated correctly 
+- Fixed the internal track length calculation as it was the audio length and not the longest of the audio and frets lengths.
+
+TheGHOSTBatchTool.exe v0.7
+- Added check in Go button that Get Details has been used first, displays a message if not. 
+- Added support for removing songs from the game that didn't fit in the ISO
+
+TheGHOSTWiiIsoTool.exe v0.5
+- Added "Add CoOp To Bonus" to add coop only songs to career bonus song list 
+- Added "Unlock Career" to make all the career songs available, playing will 1 song per tier will properly internally unlock the next tier 
+- Added "Add Songs" to allow extra songs to be added to the end of the bonus songs. 
+- Added "Free Store" which sets all the items in the shop to $0 
+- Changed the interface. 
+- New Presets drop down list added 
+- Change Now supports languages other than English (I'd forgotten about that oops) 
+- New Option to remove update partition files (If No, then the partition is not modified) 
+- New Option to unlock tier by completing just 1 song 
+- New Option to set the Bonus Art in the shop to the default picture 
+- New Option to Remove Language files other than the language selected 
+- Changed Song Blank selection list for song types song type items (Tier, Battle, Bonus etc) 
+- Removed "Read" Button, not required as there's no song list. 
+- New Check to detects if selected language is missing from ISO (may have been removed) 
+- Changed the info.txt file in -TheGHOST- folder in the iso so it now contains the amount of songs added 
+- Fixed 4GB limit on partition builder.
+
+
+
+
+v0.36 - TheGHOST
+- Changed Export track list, it now doesn't write out empty brackets when no year is present
+- Added an extra column to TheGhost track list it displays the Guitar Hero Id for debugging, 0 width by default
+- Changes Track list screen, split non career songs in to their own section
+- Added support for removing songs from the game that didn't fit in the ISO (only bonus and added song)
+- Added support for setting Mods (Most of the hacks from the TheGHOSTWiiIsoTool)
+- Added support for setting Tier Names (Tier Names are set for all tiers)
+- Added the ablility to change the background audio of the menu system.
+- Sync should be more accurate for the notes viewer (this is a temporary fix until a later version)
+
+
+v0.39 - TheGHOSTCore
+- Added GameMods class to apply hacks etc
+- Added support for removing songs from the game that didn't fit in the ISO
+- Added support for setting Mods
+- Added support for setting Tier Names (Tier Names are set for all tiers)
+- Changed Preview creation so that the volume is louder.
+- Changed the preview combining so that it adds the audio volumes rather than averaging them.
+- Changed Preview default volume to 80% (to accomodate the above)
+- Fixed TalkTalkin for GHA.
+- Fixed Star Power not being generated correctly
+- Fixed the internal track length calculation as it was the audio length and not the longest of the audio and frets lengths.
+
+v0.7 - TheGHOSTBatchTool
+- Added check in Go button that Get Details has been used first, displays a message if not.
+- Added support for removing songs from the game that didn't fit in the ISO
+
+v0.10 - TheGHOSTWiiIsoTool
+- Added "Add CoOp To Bonus" to add coop only songs to career bonus song list
+- Added "Unlock Career" to make all the career songs available, playing will 1 song per tier will properly internally unlock the next tier
+- Added "Add Songs" to allow extra songs to be added to the end of the bonus songs.
+- Added "Free Store" which sets all the items in the shop to $0
+- Changed the interface.
+- New Presets drop down list added
+- Change Now supports languages other than English (I'd forgotten about that oops)
+- New Option to remove update partition files (If No, then the partition is not modified)
+- New Option to unlock tier by completing just 1 song
+- New Option to set the Bonus Art in the shop to the default picture
+- New Option to Remove Language files other than the language selected
+- Changed Song Blank selection list for song types song type items (Tier, Battle, Bonus etc)
+- Removed "Read" Button, not required as there's no song list.
+- New Check to detects if selected language is missing from ISO (may have been removed)
+- Changed the info.txt file in -TheGHOST- folder in the iso so it now contains the amount of songs added
+- Fixed 4GB limit on partition builder.
+
+
+
+v0.9 - TheGHOSTWiiIsoTool
+- Fixed some resizing issues on the form.
+
+
+
+v0.35 - TheGHOST
+- Fixed missing text on project form recent radio button (Vista and XP with XP Theme?).
+- Fixed Preview error when audio is shorter than default preview length.
+
+v0.38 - TheGHOSTCore
+- Fixed "Error Connecting Pins" issue in TheGHOST when the audio check worked fine. (WavDest Wav header issue on Vista).
+- Fixed Audio playback stuttering for Preview and Notes Viewer
+- Fixed issue where audio was playing silence forever. TheGHOST process would not exit and CPU was being used.
+
+v0.8 - TheGHOSTWiiIsoTool
+- Renamed to TheGHOSTWiiIsoTool from TheGHOSTWiiIsoPrep
+- Added the ability to change the Disc ID to allow each Disc to have it's own save file.
+- Added Disc title changes (opening.bnr and save file)
+
+v0.5 - TheGHOSTAudioTool
+- Renamed to TheGHOSTAudioTool from "Audio Checker"
+- Audio sample replaced with shorter audio (SciFI on guitar ;-)  )
+- Now uses TheGHOST plugins instead of the same code duplicated (maximum compatibility with TheGHOST)
+- Plays converted XBADPCM audio to let the user hear the converted audio.
+- Added "Install Wav Dest Filter" button (Should work on XP and Vista - 32 and 64 bit)
+- Added "Install XBADPCM Codec" button (Should work on XP and Vista - 32 and 64 bit, plus Windows 7)
+
+
+
+
+
+v0.7 - TheGHOSTWiiIsoPrep
+- Shrinks the update partition, by creating an empty one
+- Extracts the data partitioin
+- Sets the Cheats to 1 note each, G, GR, R, RY, Y, YB, B, BO, O (optional)
+- Removes the intro videos (optional)
+- Replaces all videos (optional)
+- Allows the user to edit the file system to replace videos, add / remove files etc (optional)
+- Moves the existing data partition back to the end of the update partition.
+- Builds a new data partition
+- Replaces the existing data partition with the new partition
+- Resizes the new partition to the full size of the ISO.
+- New Help button
+- Renamed the Open button to Read
+- Added message if ISO or Working Folder are not set or do not exist
+- Changed completion text box message to inform user that they chould backup the prepped ISO.
+
+v0.37 - TheGHOSTCore
+- Mids with note on where note off is are fixed, hopefully this will not have an effect on other mids.
+
+Package
+- Added new Audio setup folder (I've edited the batch files in xbadpcm and wavdest so they run from any folder)
+- Added the latest (1.1) guide.
+
+
+
+v0.34 - TheGHOST
+Changed 'Smat Map' to 'Smart Map' in the Notes Screen.
+
+v0.35 - TheGHOSTCore
+- Fixed exception when attempting to set markers where non were available in the PAK.
+- x86 set on release exes
+
+v0.36 - TheGHOSTCore
+- Fixed exception when attempting to set markers where non were available in the PAK.
+- A couple of midi types added for a couple of tricky mid files.
+- Fixed issue when no notes are mapped (massive last note length)
+- Minus length on notes (Sustain detection was bad)
+- Minus length on last face off section
+- Fixed issue with TheGHOST.exe putting ", " as the year for all songs with no year
+- Songlist song entry always has gem_offset, fretbar_offset and input_offset set to 0 for replaced songs
+
+
+
+Pre Beta
+
+Fixed exception caused when exiting track window when preview is playing (Also happened on Noes viewer)
+Mono + Stereo tracks not playing properly notes viewer when merged.
+Smart map not generating from same notes type (Guitar/Rhythm) if available.
+StarPower / BattlePower and Face Off that don't have 2 or more items are replaced with generated items.
+Renamed TheGHOSTBatchTool to TheGHOSTWiiBatchTool
+Added link to about screen
+Added help button to main screen (Looks for PDF in working folder then parent)
+
+
+
+Coded a fix for bad Mids with NoteOn where NoteOff should be (may be from a bad converter tool?)
+Fixed a bug in TheGHOST audio playback where only stereo audio could be played.
+
+
+All exceptions are caught and displayed in a custom window that inserts the app title and version in to the exception message. The user can copy the message witht eh "Copy" button ready for reporting
+All version numbers are held in the AssemblyInfo.cs
+The buttons on the Blank windows are black again.  Please test that the text is white  ;-)
+All date limits have been removed completely.
+
+
+
+Just a couple of tests around importing files from the ISO and converting audio. If the destination file does not exist an exception is thrown immediately
+About screen
+Version numbers
+Tooltip on "Smart Mode" icon
+Once "Start" has been pressed you cannot go back a screen
+Edited some screen titles
+Tab orders set.
+
+
+Bug Fix: Mid - Star Power Gen for Video Game Hero and Stairway To Heaven. (some VGH songs are too short for > 1 SP sections, so they got none)
+HOPO being displayed in notes viewer
+HOPO measure adjustment option (plus new default setting added)
+Stopped END event being used for all length calculations
+Always set the "rhythm_track" qb item to 0 in song entry
+Always remove the "use_coop_notetracks" qb item in the song entry if it exists
+Adjust Star Power / Face off sections so that there are no star power / battle power sections that get cut off.
+When dropping a filder on the the "Smart Mode" icon all mapped and generated items are removed.
+Remove overlapping star power / battle power sections
+Merge overlapping face off sections.
+Read the Year from the song.ini
+Read the Delay from the song.ini (UnsteadyCarrot: this may solve those odd songs that are out of sync ;-)
+New setting in the YearMode default setting to force the year to always be blank (as it can now be imported from the song.ini)
+
+SampleApp
+---------
+HOPO measure setting
+Blank Year option added to ensure year is blanked
+BugFix: qb.pak.ngc is re fetched from the iso when Go is pressed as it could have been removed if Go had already been pressed.
+
+
+
+
+Language support tested and working for GH3 & GHA
+No exception when adjusting non mapped items in the notes viewer
+Chart parsing fixed (for ChartGen charts, internal items are in a different order)
+Replace artist_text with "by" even when set to a string like "inspired by" (involved changing a qb file item data type) 
+
+
+Fixed GHA (removed the feature that gets the qb.pak from ISO when finalising the build)
+Removed PS2 and PC from the game list
+Prep tool no longer replaces the audio
+Disabled the Start button on the last screen when pressed.
+
+
+NOTES SCREEN
+- Missing Notes difficulty generation
+- Missing Star Power generation
+- Missing Battle Power generation
+- Missing Face Off generation
+- Support Face off import from chart and Mid files
+- Generate notes items when next is pressed on notes screen.
+- StarPower is auto generated when there are <= 1 section.
+- Context menu on notes file has a "Reload" item to reload and remap notes items.
+- Multi select on GH mapped items
+- Context menu on GH mapped items now has options to generate various items (with multiselect)
+- Context menu can remove multiple selection items
+- When removing a notes file the items are numbered
+- Double-click on notes file to open viewer
+- Removed Coop stuff (not required)
+
+OTHER STUFF
+- When using "Smart Mode", previous items are cleared out when a second folder is drag and dropped.
+- Application can now detect Boss Battle songs.
+- When a Boss Battle is detected, notes are removed from the difficulties according to the Face off sections (as in GH3)
+
+
+- Notes Viewer sustain accuracy improved.  Had to calculate the gap the between the frets that the note is in to calculate a sustain trigger as too many notes were showing sustain that wasn't in the game
+- Bug Fix: Missing notes in Expert sections are back, a routine was added to trim (non sustain) notes where the length meet the next note (common in solo's etc).
+- Bug Fix: Lighting events etc were being added as practice sections from MIDs.
+- Drummer notes removed as they sometimes sound in practice mode
+
+
+Fixed a calculation in the Chart when calculating the lengh of the last note (only would have resulted in a less frets being created an only occurred when audio was shorter than notes + no end event + last note was sustained)
+Mid support added (not tested with Mids with SP as I haven't got any)
+When removing a notes file, if the file being removed is the base notes item (the one the frets etc are taken from) the first notes item (if it exists) is set as the base item.
+Add note merging for notes <= 6 ms between them. I found some notes in a mid that were supposed to be double notes but were 2 ms out.  They get combined in to 1 note (2+ buttons)
+New Mid items not in ChartGen (07 Marker, 0x59 ??)
+XBADPCM plugin fixed to encode more efficiently.
+
+
+
+
+Fixed WiiScrubber plugin failing when current path is changed by file dialog box
+Fixed bug in WiiScrubber plugin when checking directories exist before extracting files
+Delete files before extracting with WiiScrubber
+WiiScrubber DLL updated to display any error messages for debuggin purposes
+Prep app tests return values from WiiScrubber
+
+
+
+Fixed Project Window button.
+Fixed Missing plugins when no previous settings are found in the config
+In the Project window, when no recent projects were found the Browse radio button was being disabled, not Recent
+Removed audio and other game files when they are finished with.
+When coming to create all the game files at the end, if the qb.pak etc is missing they are refetched from the game.
+Notes screen menu items added added and implemented (Remove notes files, remove mappings etc)
+Notes viewer pops up when a notes file is dragged on to the interface.
+Notes screen allows you to set the notes file to get the frets etc from.
+Fixed preview bug that caused the previewLength to be set to 0 when Song wasn't the first audio file added.
+Removes any silent audio files
+Removes the Guitar if it's the same as the song
+
+
+
+
+
+You can skip screens without configuring anything
+Some checks have been put in place to sure things are set correctly (song audio must be present is guitar or rhythm are set etc)
+You cannot skip a screen or import audio when audio is being imported / decoded.
+
+Auto Mode now supports: song.ini, .chart files
+Dragging files on to audio icons disables form to Next cannot be clicked while importing (this will be changed later, it's not a nice fix)
+The same chart cannot be added multiple times to the chart screen anymore
+The last application settings are saved to the .config file and reloaded on startup
+New application load up screen
+New default settings
+Track select all/none functionality
+New progress screen
+GHA fixed
+--Still loads of stuff missing or incomplete (All project settings are still not saved to the project file).
+--The Notes screen will be getting some attention next.  Remove Items etc, may be even some ACE porting... 
+
+
+Fixed the buffer running out of bytes when adjusting audio
+Changed DirectShow.StopWhenReady to Stop(), Headers are alwyas fixed on encode.
+Replaced "’" with "'" on Artist and Title text
+Removed star power alignment to frets (makes it accurate again)
+
+
+
+2000 year removed (", " removed when no year specified)
+silent rhythm audio changed from 5 seconds to half a second
+Replacing the same song twice might work (Thought it wouldn't because of padding).
+Bug in Sample app (run twice failed) fixed
+If only song audio is specified then audio is reduced 50% to stop distortion (it's doubled back up as guitar so it's 100% when notes are played)
+

@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17B2FF8D-E344-4B16-BC56-1BFE99EBC6E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nanook.TheGhost</RootNamespace>
+    <AssemblyName>TheGHOST</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QueenBeeParser, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Backup\My Work\Development\C#\GuitarHero3Custom\DiscBuilder\QueenBee\bin\Release\QueenBeeParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionMessageForm.designer.cs">
+      <DependentUpon>ExceptionMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesEditor\NotesEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotesEditor\NotesEditor.designer.cs">
+      <DependentUpon>NotesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesEditor\NotesEditorDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotesEditor\NotesEditorDisplay.designer.cs">
+      <DependentUpon>NotesEditorDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesEditor\NotesEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotesEditor\NotesEditorForm.designer.cs">
+      <DependentUpon>NotesEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectDefaultsProperties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionMessageForm.resx">
+      <DependentUpon>ExceptionMessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotesEditor\NotesEditor.resx">
+      <DependentUpon>NotesEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotesEditor\NotesEditorDisplay.resx">
+      <DependentUpon>NotesEditorDisplay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotesEditor\NotesEditorForm.resx">
+      <DependentUpon>NotesEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ModsScreen\ModsScreen.resx">
+      <DependentUpon>ModsScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\NotesScreen\NotesEditScreen.resx">
+      <DependentUpon>NotesEditScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ProgressScreen\ProgressScreen.resx">
+      <DependentUpon>ProgressScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ProjectScreen\ProjectScreen.resx">
+      <DependentUpon>ProjectScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ScreenBase.resx">
+      <DependentUpon>ScreenBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\TrackEditScreen\TrackEditScreen.resx">
+      <DependentUpon>TrackEditScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\TrackSelectScreen\TrackSelectScreen.resx">
+      <DependentUpon>TrackSelectScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Screens\ModsScreen\ModsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ModsScreen\ModsScreen.Designer.cs">
+      <DependentUpon>ModsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\NotesScreen\NotesEditScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\NotesScreen\NotesEditScreen.Designer.cs">
+      <DependentUpon>NotesEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ProgressScreen\ProgressScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ProgressScreen\ProgressScreen.Designer.cs">
+      <DependentUpon>ProgressScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ProjectScreen\ProjectScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ProjectScreen\ProjectScreen.Designer.cs">
+      <DependentUpon>ProjectScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ScreenBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ScreenBase.Designer.cs">
+      <DependentUpon>ScreenBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ScreenBusyEventArgs.cs" />
+    <Compile Include="Screens\TrackEditScreen\TrackEditScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\TrackEditScreen\TrackEditScreen.Designer.cs">
+      <DependentUpon>TrackEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TrackSelectScreen\TrackMap.cs" />
+    <Compile Include="Screens\TrackSelectScreen\TrackSelectScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\TrackSelectScreen\TrackSelectScreen.Designer.cs">
+      <DependentUpon>TrackSelectScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TrackEditScreen\TrackProperties.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon.ico" />
+    <None Include="Properties\app.manifest" />
+    <Content Include="Images\TheGHOSTBanner.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheGHOSTBanner.bmp" />
+    <Content Include="Wizard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileSystemPlugin\FileSystemPlugin.csproj">
+      <Project>{F2EA7AB1-605E-4339-AC41-9FF00D552036}</Project>
+      <Name>FileSystemPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImaAdpcmPlugin\ImaAdpcmPlugin.csproj">
+      <Project>{A2ADD054-D993-4FFB-A34B-FAFF2AC79292}</Project>
+      <Name>ImaAdpcmPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FFMpegAudioPlugin\FFMpegAudioPlugin.csproj">
+      <Project>{571B7509-4A24-446D-8D60-B7F24CA6437B}</Project>
+      <Name>FFMpegAudioPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheGHOSTCore\TheGHOSTCore.csproj">
+      <Project>{4B8CAA64-C1CD-4031-885C-BC7B48825860}</Project>
+      <Name>TheGHOSTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WiiScrubberPlugin\WiiScrubberPlugin.csproj">
+      <Project>{14F6497C-6B4C-4803-999E-23CAE4AC343C}</Project>
+      <Name>WiiScrubberPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsAudio\WindowsAudio.csproj">
+      <Project>{D7467B78-5E54-47E3-B12D-0F280E912E26}</Project>
+      <Name>WindowsAudio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XbadpcmPlugin\XbadpcmPlugin.csproj">
+      <Project>{6826D022-5193-4DFB-ACFB-D5B1748AC1D2}</Project>
+      <Name>XbadpcmPlugin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

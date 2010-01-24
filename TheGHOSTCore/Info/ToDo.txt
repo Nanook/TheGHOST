@@ -1,0 +1,387 @@
+﻿Not setting German coop titles etc
+Hanging when error on last stage
+Save tier info in TheGHOST, load in to ISO tool
+
+Core
+Added Volume normalisation when only song audio is specified. This adjusts audio levels across all songs to be almost the same (it's not 100% accurate, but makes a big difference)
+Added volume normalisation for background audio
+Fixed Sync issues that can occur when only change audio only or notes only settings. TheGHOST will now generate both if required. 
+Fixed audio mixing for preview - not as quiet at is was, better clipping and modifies volume according to settings.
+Fixed crash when editing Project song and applying settings.
+Added Smart Map support for mid tracks named T1 GEMS
+Added new FF type to Mid parser.  It was crashing when sub type 4 was found.
+Changed the PreviewFadeLength default to 1 second
+Fixed Save and Restore of background audio volume
+Fixed Preview having incorrect volume if track was selected for editing.
+Fixed volume calulation for Background Audio
+Fixed Items not being applied when the project's LastApplied dates had been set in the future
+Added smarter file deleting, instead of crashing.
+
+TheGHOST
+Fixed IMA encoder. Songs with mono audio were causing the load forever bug. (Stereo to mono was ok)
+Added a cancel button to the Exit message
+Fixed Track Icon removing / greying out when removing audio.
+Fixed Issue that allowed the notes viewer to open with no audio.
+
+
+WiiISOTool
+Added Exception handling around delete failure
+
+
+
+
+
+- Added error message when Game is incorrectly set and QB cannot be parsed. 
+- Working folder not being restored on new project
+- Tier Editing
+- Restore songs in order when loading XML NOT KEY
+- Set Death drain to end of battle song
+- TheGHOST not prompting on auto apply
+- GH3 Coop Set
+- Default preview to 100%
+- CoOp Tiernames set from Career when they have the same tier count
+- Removed Right-Click items from Notes Mappings list.
+- Added Force No Star Power item to Right-Click items from Notes Mappings list.
+- Added default option to set Force No Star Power.
+- UnlockCareerTiers renamed to UnlockSetlists and now unlocks the coop setlist also
+- Reapply All check box to apply all settings to a new ISO.
+- Fixed SP notes count calculation (this cause a lot of 1 note sp sections to be removed)
+- Fixed unplayable/invisible generated notes that occured in easy and medium.
+- Fixed time sig calculation in Mid notes imports
+- Added File check that background audio files exist before continuing to next screen.
+
+
+
+KingsAndQueensCredits is added as the last song in the bonus tier.
+KingsAndQueen is added as the last song in the career.
+
+
+Test adding songs to Aerosmith (we add new songs unless ttfaf exists)
+
+easy has notes that fail and are invisible
+Replace TheGHOST songs last ALWAYS
+bnr replace file
+
+bosstom_scripts
+ItemQbKey=time
+Number=ms of death drain
+ItemQbKey=scr
+QbKey=boss_battle_begin_deathlick
+
+More battle items
+Testing: Edit paths and other saved XML items.  Improve error handling
+
+Fixed QbMods not being Restored or applied in TheGHOST
+
+
+
+Blanks bonus song descriptions
+
+- IsoTool Label resizing fixed
+
+
+- Move buttons are greyed when messages are shown
+- WiiScrubber partition detection works again.
+- If ogg crashes the decoder then this cannot be caught by TheGHOST, try decoding to wav and importing that.
+- Allowed more characters when saving project folders
+- Save temp path with app, not project
+- Fixed crash when un/checking enable guitar/rhythm when playing preview
+
+- When applying changes on the last screen - The Artist and Title have been added where available
+- Auto Apply settings when no songs checked for editing but has mapped folders
+- Buying song from the shop crashes GH3 (TESTED - OK)
+- Preview was silent for songs where the default start + length was after the end of the song (only when not checked for editing)
+- Preview was set to end of song when default start + length was after the end of the song (now goes to the middle) 
+
+- WiiIsoTool Prep button was being enabled to early.
+- WiiIsoTool blanking criteria wasn't blanking the correct tracks
+- Set list now shows as it does in GH. TheGHOST songs are not separate.
+- Fixed Track Screen and Notes Screen title so it updates when moving between screens
+- Move to "..." button song titles show the updated artist and title (like above).
+- Changed Track Select screen so it always imports mapped folders even when items not checked
+- Changed Track Select screen so that items are not checked when folders are mapped
+- Fixed bug where you couldn't edit the "Non career songs"
+- new ProjectSongTier to link the song to the tier properly (large internal restructure / rewrite)
+- Remove other song collections (there were many collections of songs before the above change, editsongs, changed songs, disabledmappings etc, not all in one with flags)
+- Add Songs and Tier numbers into ProjectTierSong
+
+- Fixed Crash when saving a project with no songs mapped
+- Background audio not always playing!!
+- Background audio Preview settings get blanked and can't stop audio playing
+- Disabled preview settings while decoding audio/ creating preview
+- Background audio doesn't stop playing when changing start offset  (Timer was firing twice)
+- Can now switch between BG audio tracks While playing previews
+- In track select screen Changed songs and select/deselect not working for added folders
+- Dragging folders on to background audio fixed
+- "Creating Preview" message added
+- Turn off checked item when disabling mappings
+- Mapping Disabled Items cannot be checked
+- Rework notes viewer (Fixed single core machines locking while playing)
+- Map missing guitar items (instead of relying on generate)
+- Save Disabled settings to Project file.
+
+
+Remove update partition (do with new wiiscrubber)
+x Save project on screen close
+x Match unmatched settings against next unmatched song
+x Allow unlocking of Project Songs (useful when songs match no ISO Ids)
+Fix file open bugs (audio etc)
+
+Organise "last applied" checking on finalising
+
+Volume Mixer
+Play audio as mixed in GH3
+
+PartitionBuilder offsets fix??
+Fix update partition offset
+Clap on notes viewer
+Trigger on off
+Force Mono
+Blanks lights in QB etc
+Read mp3 / ogg tags
+MP3 from source audio
+
+- Fix file numbering on progress screen (again)
+- Fix bug when removing mappings and saving
+- Changed xml to tgs on project song files
+- Added restore item to track list context menu
+- Icons are blanked in the track list when items are removed
+- Read only source files would crash the track import screen
+- Zeros were being removed from any project folders (made up of artist and song name)
+
+- Allow for missing update partition
+- Allow for missing update partition for WiiISO tool
+- Disc ID 4 bytes
+- Disc Title
+- Doesn't clean out folders that aren't in the project
+
+- Is GH3 sustain working?  ALWAYS FALSE?
+- Couldn't map folder to TTFAF after disabling it.
+- Save copy of song xml settings to project folder
+- Restore song xml settings
+- Sort Dragged folders
+- Search folders for audio when dropped
+- default preview volume to 80%
+- Message box on saving project
+- Set colour back to black on mapping removal
+
+- Titles on Track notes screens
+- Store Project Audio relative to project file
+- Fix Dimmu Borgir (Loads of SP)
+- Fix Nirvana Rhythm Import (Don't import silence / dupe audio)
+- Delete qb.pak and streams when quiting
+- Jump to song in TheGHOST
+- Project saving (Lots of work)
+- Tick on Base notes file
+- Store Audio Volumes in config files
+- Fix Background audio playback and decode on play
+- Clear Raw folder on exit / and compressed / game files etc
+- Add the final screen to the move menu
+- Save to temp then rename
+- Track List Screen now has more select options
+- When generating notes on load, copy sync etc
+- Setting to store date last written to iso
+- Show message on preview play to decode audio
+- Test if mapped items details are duped with mapped item
+- Decoding audio form
+- Map Item use unique id not index - FIX UNIQUE ID MAPPINGS WHEN GENERATED
+- Restructure Map item to remove item index
+- Test that TalkTalk and Cult work loading and saving settings
+- Handle Missing Files
+- Restructure SongNames and BG audio in to a collection
+
+
+
+
+- Error when audio fails to decode
+- Languagein batch tool
+- Test paths Game Radio Button on BatchTool
+- Get Disc ID for ISO TOOL
+- ISO Tool lengths for text
+- Look in to outstanding bugs
+- GH3 HOPO simulation in GHA
+- Redo TheGHOST bik
+- Update other Graphics
+- Hacks screen (Copy features from the Prep Screen in the ISO tool)
+- Edit Tier names
+- Background music dat wad replacement
+- Direct Draw Notes Viewer
+
+- Option to remove update partition files
+- Option to unlock tier by 1 song
+
+- Detect missing language
+
+- Remove other languages
+
+- Set Songs added to ThgGHOST.txt file
+- 4GB error in partition builder
+
+- Add other languages when adding songs
+
+
+ - Prep tool to rebuild partition, remove loads of files, replace with movies
+ - Prep Tool check for items in text box being correct
+
+ - Audio Filter setup buttons
+
+
+ - Look into Puddle Of Mudd
+
+ - Audio checker test ogg fails in preview
+
+ - Test adding new song to qb file (and audio files to ISO)
+
+ - Amend Wii ISO tool to change title ID...
+
+ - Distortion in notes player
+ - Vista glitchy audio
+
+ 
+ - PreviewLength is 0 when Guitar is added first.
+
+ - detect notes that are < 10ms apart and merge them
+
+ - Compare paths and data for song and guitar to test if equal to save time and disk space...
+
+ - Fix loud audio
+
+ - 0 - star power items
+
+ - Battle mode from chart
+
+ - Build dat and wad from nothing
+
+ - Ensure WAV is longer than last note.
+
+ - Star power on hit me with your best shot (cloning)
+
+ - Fix audio glitch at start of song - Murloc Sometimes get it
+
+ - Fix loudness
+
+ X Add Notes by ... for FOF files
+
+ - Notes offset applied to duplicate setting
+ 
+ - If first fret is short To many frets are shown when padding
+ 
+ - Don't Auto match notes with only 1 note in them
+
+ - Show auto Hammer ons in viewer
+
+ - Set Hammeron tolerence and apply to notes.
+
+Get Tags from input audio
+  1. Check the folder for Song.Wav, Song.Flac, Song.Ogg then Song.MP3. and repeat for Guitar and Rhythm
+  2. It will also look for a notes.chart and notes.mid (assuming I get this suppoted one day)
+  3. Then it will look for a song.ini and parse the text. 
+
+ - Folder in audio files so that FOF folder can be dragged on
+
+ - Get practice section markers from chart
+
+ - Last screen to display compression progress etc.
+
+ - Generate extra filler frets at end or at start (if large offset)
+
+ - Options to ensure x seconds before notes start
+
+ - Insert silence at start of wav to accomodate above
+
+
+
+ - Generate missing difficulties
+
+-- Generate Blank rhythm wav
+
+ - Seperate temp folders for raw wavs.
+
+ - Fix Inspired By (QB String Artist text - GH3 devil battle)
+
+ - Callback for File replacement so that errors can be skipped and progress can be tracked
+
+ - Take the Has changed file flag and check file modified date
+
+ - Don't set the notes offset to 0 on set, set a flag instead
+
+ - Change the song preview so that it uses the notes viewer/player routines
+
+ - Set the Sustain trigger to (2nd fret - 1st fret) / 2)
+
+
+QueenBeeParser: Make some constructors internal to prevent external instantiation
+
+ - Project Settings: Load assembly from PluginName from ProjectPluginInfo
+ProjectScreen: display descriptions
+
+-- Add BannerText to ScreenBase to display for each screen
+
+
+--
+
+ - Project to be contructed with project front screen params
+ - Project does not allow setting of most items
+ - Project FileCopy plugin in is masked with a version that remembers the game files.
+ - GameFile static method has 2 "out" params for arrays
+
+ - Add more items to song editor
+
+FIX PS2 missing notes file? GameFile  ToArray
+
+
+
+-----
+
+ - Drag Drop charts overwrites populated items
+ - Charts delete items
+ - Charts Mapped to 1:Item name
+ - Charts Gen StarPower
+ - Charts get song length
+ - Charts trim notes past end of audio
+
+ - Fix ", " no year bug
+
+ - Gen Battle stuff
+
+
+Audio volume
+
+ - Practise sections (From chart)
+ - Practise sections Generate
+
+
+
+
+Some items in Song struct (Guitar and Band Volume are integers??)
+Some items in Song struct (Guitar and Band Volume are missing)
+Some Song items don't have "singer" GH3:cream-sunshineforyourlove (boss battles)
+Devil has "Inspired By" for artist text
+
+Sustain trigger is (2nd fret - 1st fret) / 2)
+
+Audio must be longer than last fret? or song wont load
+
+
+
+SAVE GAME INFO
+
+This is indeed the best way. Make certain to get 1.07a. (It has complete no-copy save copy support.)
+
+There are 2 types of no-copy flags. Type 1 is the flag contained in "banner.bin" at offset 0x07. If this is set, the Wii will block copying of the save outright. in BOTH directions. (This means if you bypassed the flag to copy the file to your SD card, and you don't have the flag bypass set, the wii will NOT let you copy the file from the SD back to the system.) (If you select copy, the system will say right then and there "This save cannot be copied.")
+
+Type 2 is a directory called "nocopy". Here, the wii will start the save copy process, and skip EVERYTHING contained within "nocopy" directory. If that results in only "banner.bin" being copied, then the wii will tell you that the save cannot be copied, otherwise it will copy everything outside of the nocopy directory, including banner.bin. As of Gecko 1.07a, Saves of this type are copied COMPLETELY. The Wii does NOT block copying such saves back to the system from the SD card, but it will however honour the nocopy directory when you try to copy the save back off, immediately.
+
+Guitar Hero 3, Guitar Hero Aerosmith, and all NES/SMS/Genesis/TG16/SNES virtual console games use Type 2.
+
+Doctor Mario Online RX uses BOTH type 1 and type 2.
+
+Mario Kart Wii, Mario & Sonic Olympics, Nights: Journey of Dreams, Internet Channel, Nintendo Channel, CHeck Mii Out channel, use Type 1. 
+
+make a generic localGameFilename  function
+
+Need events for progress and Notes Automappings etc
+
+
+
+http://kotaku.com/people/HowardC/ 

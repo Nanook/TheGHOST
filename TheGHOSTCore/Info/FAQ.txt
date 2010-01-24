@@ -1,0 +1,346 @@
+﻿[size=18][b]TheGHOST[/b][/size]
+
+[b]What operating systems does TheGHOST support?[/b]
+Windows XP, Vista and 7. Windows 2000 is also reported as working.
+
+[b]Please could you consider doing this for Mac/Linux?[/b]
+There are currently 3 things preventing this: 
+1. The Audio Codec (XBADPCM) is Windows only and not ours. 
+2. The Wii Scrubber DLL is Windows only. 
+3. TheGHOST was written against Windows. It would need to be compiled against Mono and fully tested. 
+These issues can now be overcome. This is low on the priority list, hopefully some one will attempt it once the source is released.
+
+[b]Which versions of GH are supported?[/b]
+Currently only Wii GH3 and GHA are supported. There is no support planned for any more. The code is structured to support more with a bit / lot of work.
+
+[b]Which audio formats can be imported?[/b]
+The “Windows Audio” plugin uses Direct Show to decode audio and is part of Windows. This should decode anything Windows can play using Windows Media Player. When using Smart Mode TheGHOST will search folders for Wav, Flac, Ogg and Mp3 respectively.  Other formats can be used, but they must be dragged on to the song, guitar and rhythm icons directly.
+
+[b]How do I separate my Mp3 (or other) in to separate song guitar and rhythm files?[/b]
+You can’t.  It’s like pouring Red, Blue and Yellow paint in to one pot then trying to separate them back out.  Just use the audio as the song file and TheGHOST will handle the rest.
+
+[b]How do I map audio folders to songs?[/b]
+Drag folders on to the Track Listing Screen.  TheGHOST will search all dropped folders for audio files.  This feature is quite flexible in that it will accept many folders being dropped at once and search them all. All found folders are sorted alphabetically by full path and mapped to songs in the list that are not already mapped.
+
+[b]How do a I reorder my folder mappings?[/b]
+Select a song to be moved and drag it up or down. Only folders (bold mappings) can be dragged around and reordered.  If the project has been previously saved and one of the saved songs isn't in the correct place it must be removed and readded. To do this Right click the song and select "Remove Saved Settings".  You can drag the song folder from the project folder back in to TheGHOST if you need to move it around.
+
+[b]How do I remove mapped songs?[/b]
+Select the songs that are to be removed.  Right click the selected song(s) and select "Remove Folders" / "Remove Saved Settings".  If you accidentally remove saved settings and would like to restore them then select "Restore Saved Settings".
+
+[b]What do the Blue and Green icons in the track list mean?[/b]
+Blue indicates that a song has changes that have not been applied to the game.  Green indicates that the settings have been applied and the song is up to date in the game.
+
+[b]How do I prevent songs from being mapped to?[/b]
+Select the songs that are to be excluded.  Right click the selected song(s) and select "Disable Mappings".  To reenable mappings select "Enable Mappings".
+
+[b]How do I make TheGHOST reapply songs when the project shows the songs have not been modified (with green box)?[/b]
+In the Track Select Screen, select the songs that are to be reapplied.  Right click the selected song(s) and select "Set To Changed".  This will make TheGHOST apply all song settings (qb settings, audio and notes) to the game.
+
+[size=18][b]The Game Disc[/b][/size]
+
+[b]Can I create more space in the ISO?[/b]
+You can use TheGHOSTWiiIsoTool to prepare the ISO and create more space in it.  Blanking the audio, removing movies, removing unused files and removing the update partition gains the most space.  The ISO is also compacted to ensure that when files are replaced they are added to the free space.
+
+[b]Do I have to use TheGHOSTWiiIsoTool?[/b]
+No, but you may find that you quickly run out of room.
+
+[b]TheGHOSTWiiIsoTool appears to have hung/stopped should I leave it running?[/b]
+Yes. The more data is in the ISO, the longer it takes to move, rebuild and replace the data partition.  Just let it run, if it takes a fair while.  As long as the hard disk is active it’s working.
+
+[b]Can I increase the disc size to be greater than 4 gig?[/b]
+The 4 gig limit is not a limit imposed by TheGHOST. If you use the latest WiiScrubber.exe I think you can resize the disc and data partition larger. If that doesn't work I think you could even take a dual layer game and insert the GH data partition in to it. Just make sure you change the disc IDs etc. 
+
+Adding too many songs will break the save file as it runs out of space to hold the save data. 
+
+It’s possible that GH has problems with files beyond the 4 GB limit, even on a 4.37GB disc.
+
+[b]Where do my changes go when using TheGHOST and TheGHOSTWiiIsoTool?[/b]
+They are applied back in to the same ISO the tool is using.
+
+[b]Is TheGHOST compatible with missing update partitions like saved with the USB loader etc?[/b]
+Yes.
+
+[size=18][b]Technical[/b][/size]
+
+[b]Why does the guitar audio get removed?[/b]
+TheGHOST checks for silent audio and audio that matches the song. If either of these are found then they are removed.  When there is no guitar audio TheGHOST will copy it from the song automatically.
+
+[b]How does TheGHOST ensure x seconds before the first note plays?[/b]
+The start of the first note is analysed if it before x seconds then all notes are move on by the offset required.  This offset is also applied to the audio files to ensure they stay in sync.
+
+[b]How does TheGHOST handle only having only song audio?[/b]
+It will half the volume of the Song and copy it to the Guitar on it's own when finalising the settings etc. The Rhythm will be set to a half second of silence.  This means that when you’re playing the game that you can still use the whammy.  When you miss a note the you can hear the volume half.
+
+[b]Why does the Guitar audio get removed sometimes?[/b]
+When TheGHOST creates the game audio it tests if the Guitar is blank or matches the Song, if so it removes it. Then the audio is treated as above. If both Song and Guitar are specified and are different, the volume is left untouched as they should be split correctly (as GH2, 3 Rock Band etc).  If Rhythm is not set it is set to a half second of silence.  There is no duplicate check in place for the Rhythm as it is rarely included.  If multiple Song audio files are added then the duplicate check is not performed, however the silent audio is still removed. The song is allowed to have 1 silent audio file.
+ 
+[b]How does the RemoveOtherLanguages option work?[/b]
+If you prep the ISO and set the "RemoveOtherLanguages" option to Yes it will remove all the files that are for the language NOT set in the "Language" list box at the top right. This is to gain more room in the ISO. This is an example of the main qb.pak in the available languages:
+[list][*]qb.pak.ngc = English 
+[*]qb.pak_f.ngc = French 
+[*]qb.pak_g.ngc = German 
+[*]qb.pak_i.ngc = Italian 
+[*]qb.pak_s.ngc = Spanish[/list]
+ 
+If you would like to force your Wii to play a specific language then search the web for a utility called “Wii game language patcher”. 
+
+[b]Is anything known about the GuitarVolume and SongVolume?[/b]
+Experimenting with it has found that it may be a percentage.  Setting them to –33 makes the audio pretty much silent, 33 may double it but not always as GH appears to have a limiter to prevent distortion.  Any information is appreciated.
+
+[b]How does TheGHOST load HOPOs from a chart?[/b]
+It looks for then using Leff’s method from the PS2 days. It’s an event marked as “*” e.g. "E *".
+
+[b]Why do the frets change from what is shown in the notes viewer?[/b]
+What you see in the Notes Viewer is based on the notes file. Before TheGHOST applies the notes to the game it will cleanse them. This includes replacing all frets up to the first note.  This is to stop the padding frets some note files have that cause issues then adding more frets when adding x seconds for the “ensure x seconds before notes start” option. Star power is also checked to ensure is contains notes etc.
+
+[size=18][b]Project Settings [/b][/size]
+
+[b]How do I save all my audio and notes files with my project? [/b]
+When creating a new project with TheGHOST you are asked if you would like to save the project files with the project. Click Yes to this dialog box. You can also check "Store Files" on the project screen. 
+
+[b]When is the project saved? [/b]
+When you exit TheGHOST. 
+
+[b]What is the best way to create a project? [/b]
+Here's the recommended way (it is the safest way to not lose work due to any crashes that may occur):-
+[list][*]Open TheGHOST, select "Create a New Project", click "Continue..." and select the path of the project.
+[*]Answer "Yes" to keep your imported files with the project. This allows you to make backups or copy the project to another computer.
+[*]Set the default options in the Project Settings screen. Click Next
+[*]Set any mods, tier names and background audio, click Next
+[*]Drag folders containing audio / Frets On Fire packs on to this screen to map the songs. Once you've added all you require then click Next.
+[*]TheGHOST will import all the audio to retrieve the audio lengths. If you have not checked any songs for editing TheGHOST will offer to automatically apply the modified items to the game. Answer No to this.
+[*]Once all the audio has been decoded exit TheGHOST. This ensures the project has been saved.
+[*]Reopen TheGHOST and load the saved project. Move through the screens until you reach the Progress Screen and click Start.
+[*]TheGHOST will apply all the changed items to the game.
+[*]Play the game, if anything needs to be changed, simply reload the project and select the songs that need modifying and edit as appropriate. TheGHOST will only apply settings that have changed.[/list]
+
+[b]Why are the song settings duplicated in the project (tgp) and song folders (tgs)? [/b]
+tgs files are created when the project is saved. They are created so that if you wish to create a compilation of your favourite tracks or give someone a settings file for a song folder you can. Think of it like the Song.ini, but it hold everything TheGHOST needs.
+ 
+[size=18][b]Tier Editing[/b][/size]
+
+[b]How do I edit the Tiers?[/b]
+Open the TheGHOSTWiiIsoTool.  Set:-
+[list][*]TiersCount – Amount of tiers you would like
+[*]TierSongCount – Set to the amount of songs in the above tiers.  Set “5” for 5 songs per tier or comma separate the values e.g. “5,5,5,5,5,5,5,4”.  If you have more tiers than values, the last value is used e.g. “8,5” over 8 tiers would mean that 5 is used for tiers 2 through 8.
+[*]BonusTierSongsCount – The amount of songs that the bonus tier will contain.[/list] 
+
+[b]Why are the boss battles removed when editing tiers?[/b]
+The boss battles are removed to simplify the editing process. There are checks and flags that indicate that battles exist and how they work. They just weren’t worth the work involved to preserve /maintain them.
+
+[b]How do I add songs and keep the boss battles?[/b]
+Only set BonusTierSongsCount and leave TiersCount and TierSongsCount blank. Ensure that RemoveBossBattles is set to No. The ISO being modified must currently contain the Boss Battles.
+
+[b]What is the minimum amount of songs and tiers that can be set?[/b]
+1 tier with 2 songs - 1 song to open the encore and 1 for the encore itself. 1 bonus song.
+
+[b]What is the maximum amount of songs and tiers that can be set?[/b]
+There is no hard limit. Different combinations of Career songs and Bonus songs yield different results.  Even the way the songs are distributed over the tiers can have an effect.  There are 2 issues to watch out for:
+[list][*]The save file corrupting. If too many songs are added, the game might play and save, but will hang on reload. When testing be sure to clear out any existing save file as this can interfere with your results.
+[*]The setlist hangs the instant press the A button to play a song.  This is normally caused by having too many songs in the setlist. Sometimes making less tiers with more songs can work around this.  If the game crashes the instant you move on to it and doesn’t even play the preview then try compacting the ISO with the WiiIsoTool – use the “Compact ISO” preset.  This is a known issue caused by the version of WiiScrubber currently being used.[/list]
+
+[b]Why does the game freeze when I select a song to play?[/b]
+See the above question, point 2 specifically.
+
+[b]Why is Through the Fire and Flames (GH3) / Kings and Queens (GHA) moved to the end of the setlist?[/b]
+These 2 songs are unlocked the first time a career setlist is completed. Moving them to the end of the career setlist ensures they will always be playable without being hidden.
+
+[b]Why does Kings and Queens (GHA) appear twice?[/b]
+In GHA kings and queens is included twice. One is the end credits version and the other is the version that is unlocked after playing the end credits version.  The end credits version will always be the last song in the bonus tier. It will still function as the end credits song, but you can play it whenever you like.
+
+[b]Why has the support band check been removed in GHA?[/b]
+Like the boss battles this was removed to simplify editing.  It means TheGHOST can work with GH3 and GHA in the same way.
+
+[b]What happens if I set the tier and song counts and leave the bonus songs count blank?[/b]
+TheGHOST will modify the career tiers by adding or taking from the bonus songs. If there are not enough songs in the bonus songs then more will be added to ensure there at least 1. 
+
+[b]What happens if I set the bonus songs count and leave the tier and song counts blank?[/b]
+The career tier will be left untouched.  Only the bonus songs will be modified.  This is the approach to take if you want to add songs and keep the boss battles.
+
+[b]What happens if I set 1 tier with 2 songs then want to add more songs to the same ISO later?[/b]
+TheGHOST will bring back the removed songs in the same order they used to be in.
+
+[b]This sounds very intricate, are there likely to be any bugs?[/b]
+Probably, this was really complicated to implement due to all the combinations. If you find anything, just post it on the ScoreHero forum.
+
+[size=18][b]Guitar Hero Issues[/b][/size]
+
+[b]Why does GH freeze while playing a song?[/b]
+It appears that GH3 and GHA lock up when playing songs with over 3500 notes.  The song will load and play up to a certain point before freezing.
+
+[b]Why does the game freeze when the selection bar moves on to a song in the setlist?[/b]
+If the game crashes the instant you move on to it and doesn’t even play the preview then try compacting the ISO with the WiiIsoTool – use the “Compact ISO” preset.  This is a known issue caused by the version of WiiScrubber currently being used.
+
+[b]Why does my song start loading but never end on the arm and tattoo screen?[/b]
+If the notes file is not replaced by the Wii Scrubber plugin correctly then this can happen.  This is a known bug and we are working to fix it.  It can sometimes be fixed by following the above tip. Sometimes you just need to get a fresh ISO and apply everything to it at once and the problem goes away.  If not then it could be a bug with TheGHOST.
+
+[b]Why is my audio out of sync?[/b]
+This can be caused by the notes and audio not being synced correctly. FOF packs are normally quite good. TheGHOST will load the "delay = " line from the song.ini in an FOF folder but only if the folder is dragged on to "Smart Mode". It applies the delay to all notes files loaded at the same time. You'll be able to see that the delay is set in the notes viewer. 
+
+If you’re not using a modchip and an older backup loader then GH may not be able to load the audio data off the disc fast enough and the song can be way out of sync. The recommended approach is to pause the game when the song is loading and resume it. Restarting the song also works. DVD-RWs sometimes suffer the same issue.
+ 
+[b]Why does my audio sound all distorted when is sounded fine in TheGHOST?[/b]
+This happens when the source files are too loud.  This can happen if the Song and Guitar are the same audio. TheGHOST can detect this, but if the files are not exactly the same the audio will not be corrected.
+
+[size=18][b]Wii[/b][/size]
+
+[b]Do you need to be running any kind of Wii homebrew or mod chips or anything like that to run these discs?[/b]
+Yes, you need either a Hardmodded Wii or a Softmodded Wii. Hardmod means that you have a modchip installed. Softmod means that you installed a channel that allows you to boot backups.  This subject is out of the scope of this project.
+
+[b]I created a disc with TheGHOST but it won’t load, why?[/b]
+Your Wii must have the Trucha Bug enabled to be able to read modified discs.  If not you will most likely see an error about “Corrupt System Files”. To enable the Trucha Bug you will have to do some research as the methods keep changing and are beyond the scope of TheGHOST.
+
+[b]I have the Trucha Bug but the game will still not load, why?[/b]
+It may be that the ISO is corrupt.  Try downloading the latest WiiScrubber.exe.  See if you can open the ISO. If so, try right-clicking the DATA partition and extracting it to disc just to see if it works or not.  Try with a fresh unmodified ISO, many users have had problems with ISOs that when re-ripped worked fine.
+
+[b]Is there a way that ISOs can be edited with TheGHOST without Trucha Signing?[/b]
+Files in the ISO are signed with a private key so that they can’t be changed without it. This key is kept safe by Nintendo.  The Trucha Bug allows this check to essentially be bypassed.
+
+[size=18][b]Troubleshooting[/b][/size]
+
+[b]The application failed to initialize properly (0xc0000135). Click ok to terminate the application[/b]
+Install the .Net version 2.0 runtime.
+
+[b]Unable to load DLL 'WiiScrubber.dll': The application has failed to start because its side-by-side configuration is incorrect.[/b]
+Install the VC dependency files.
+
+[b]Error initialising filters: Could not load Xbox Filter. Is it installed?[/b]
+Use TheGHOSTAudioSetupTool to set up XBADPCM etc.
+
+[b]Failed to import files from the game source.[/b]
+It could be that required files do not exist in the game/iso.
+[list][*]They may have been removed by the user via Manual Editing of the filesystem with the TheGHOSTWiiIsoTool.
+[*]The ISO could be corrupt.
+[*]The Source File plugin might be failing. If it’s Wii Scrubber (currently the only one available) then ensure you have the VC++ dependency installed.
+[*]It can also be caused by preping an ISO and removing all other languages than the one chosen in the drop down list – then trying to create a custom using another language (because it was removed).  See the question “How does the RemoveOtherLanguages option work?”[/list] 
+
+[b]Selected language does not exist in the ISO or file extraction failed[/b]
+Install the VC dependency files or see point 4 above.
+
+[b]System.Exception: 32 at Nanook.TheGhost.WaveOutHelper.Try(Int32 err)[/b]
+A user received this error and suggested installing the Vista Codec Pack.
+
+[b]Error connecting pins: No combination of intermediate filters could be found to make the connection[/b]
+This error is caused when the XBADPCM or OGG codecs are not configured properly. It is one of the most common errors. Try:
+[list][*]Using the TheGHOSTWiiAudioTool to set up the XBADPCM codec and WavDest.
+[*]Installing the OGG codec from the pre-requisites
+[*]Try installing the K-Lite codec pack. This has worked for many users. If anyone manages to isolate which item in the back actually fixes the issue please post it.[/list]
+
+[b]Error initialising filters: Error creating filter: Object reference not set to an instance of an object[/b]
+See above
+
+[b]My OGG files are not decoding, why?[/b]
+When using the “Windows Audio” plugin you must have any necessary codecs required for the audio formats you wish to use.  For OGG it is recommended the codec linked to in the pre-requisites.  Use the 32 bit version (even on 64 bit systems).
+
+[b]How do I remove XBADPCM?[/b]
+[list][*]Open the Control Panel 
+[*]Open "Sounds and Audio Devices" 
+[*]Select the "Hardware" tab 
+[*]Double click the "Audio Codecs" item 
+[*]Select the "Xbox ADPCM Audio Codec" item 
+[*]Click the "Remove" button[/list]
+
+[b]How do I remove WavDest?[/b]
+You need to unregister WavDest. From a command prompt run “regsvr32 -u wavdest.ax” - you can amend the bat file to do this.
+
+
+
+
+
+
+Tier Editing
+
+How do I edit the Tiers?
+- Open the TheGHOSTWiiIsoTool.  Set:-
+ - TiersCount – Amount of tiers you would like
+ - TierSongCount – Set to the amount of songs in the above tiers.  Set “5” for 5 songs per tier or comma separate the values e.g. “5,5,5,5,5,5,5,4”. 
+ - BonusTierSongsCount – The amount of songs that the bonus tier will contain.
+
+Why are the boss battles removed when editing tiers?
+- The boss battles are removed to simplify the editing process. There are checks and flags that indicate that battles exist and how they work. They just weren’t worth the work involved to preserve /maintain them.
+
+How do I add songs and keep the boss battles?
+- Only set BonusTierSongsCount and leave TiersCount and TierSongsCount blank. Ensure that RemoveBossBattles is set to No. The ISO being modified must currently contain the Boss Battles.
+
+What is the minimum amount of songs and tiers that can be set?
+- 1 tier with 2 songs - 1 to open the encore and 1 for the encore itself. 1 bonus song.
+
+What is the maximum amount of songs and tiers that can be set?
+- There is no hard limit. Different combinations of Career songs and Bonus songs yield different results.  Even the way the songs are distributed over the tiers can have an effect.  There are 2 issues to watch out for:
+   1. The save file corrupting. If too many songs are added, the game might play and save, but will hang on reload. When testing be sure to clear out any existing save file as this can interfere with your results.
+   2. The setlist hangs the instant press the A button to play a song.  This is normally caused by having too many songs in the setlist. Sometimes making less tiers with more songs can work around this.  If the game crashes the instant you move on to it and doesn’t even play the preview then try compacting the ISO with the WiiIsoTool – use the “Compact ISO” preset.  This is an known issue caused by the version of WiiScrubber currently being used.
+
+Why does the game freeze when I select a song to play?
+- See the above question, point 2 specifically.
+
+Why is Through the Fire and Flames (GH3) / Kings and Queens (GHA) moved to the end of the setlist?
+- These 2 songs are unlocked the first time a career setlist is completed. Moving them to the end of the career setlist ensures they will always be playable without being hidden.
+
+Why does Kings and Queens (GHA) appear twice?
+- In GHA kings and queens is included twice. One is the end credits version and the other is the version that is unlocked after playing the end credits version.  The end credits version will always be the last song in the bonus tier. It will still function as the end credits song, but you can play it whenever you like.
+
+Why has the support band check been removed in GHA?
+- Like the boss battles this was removed to simplify editing.  It means TheGHOST can work with GH3 and GHA in the same way.
+
+What happens if I set the tier and song counts and leave the bonus songs count blank?
+- TheGHOST will modify the career tiers by adding or taking from the bonus songs. If there are not enough songs in the bonus songs then more will be added to ensure there at least 1. 
+
+What happens if I set the bonus songs count and leave the tier and song counts blank?
+- The career tier will be left untouched.  Only the bonus songs will be modified.  This is the approach to take if you want to add songs and keep the boss battles.
+
+What happens if I set 1 tier with 2 songs then want to add more songs to the same ISO later?
+- TheGHOST will bring back the removed songs in the same order they used to be in.
+
+This sounds very intricate, are there likely to be any bugs?
+- Probably, this was really complicated to implement due to all the combinations. If you find anything, just post it on the ScoreHero forum.
+
+
+
+Track Listing Screen
+--------------------
+
+How do I map audio folders to songs?
+- Drag folders on to the Track Listing Screen.  TheGHOST will search all dropped folders for audio files.  This feature is quite flexible in that it will accept many folders being dropped at once and search them all. All found folders are sorted alphabetically by full path and mapped to songs in the list that are not already mapped.
+
+How do a I reorder my folder mappings?
+- Select a song to be moved and drag it up or down. Only folders (bold mappings) can be dragged around and reordered.  If the project has been previously saved and one of the saved songs isn't in the correct place it must be removed and readded. To do this Right click the song and select "Remove Saved Settings".  You can drag the song folder from the project folder back in to TheGHOST if you need to move it around.
+
+How do I remove mapped songs?
+- Select the songs that are to be removed.  Right click the selected song(s) and select "Remove Folders" / "Remove Saved Settings".  If you accidentally remove saved settings and would like to restore them then select "Restore Saved Settings".
+
+What do the Blue and Green icons in the track list mean?
+- Blue indicates that a song has changes that have not been applied to the game.  Green indicates that the settings have been applied and the song is up to date in the game.
+
+How do I prevent songs from being mapped to?
+- Select the songs that are to be excluded.  Right click the selected song(s) and select "Disable Mappings".  To reenable mappings select "Enable Mappings".
+
+How do I make TheGHOST reapply songs when the project shows the songs have not been modified (with green box)?
+- In the Track Select Screen, select the songs that are to be reapplied.  Right click the selected song(s) and select "Set To Changed".  This will make TheGHOST apply all song settings (qb settings, audio and notes) to the game.
+
+
+Project Settings
+----------------
+How do I save all my audio and notes files with my project?
+- When creating a new project with TheGHOST you are asked if you would like to save the project files with the project.  Click Yes to this dialog box.  You can also check "Store Files" on the project screen.
+
+When is the project saved?
+- When you exit TheGHOST.
+
+What is the best way to create a project?
+- Here's the recommended way (it is the safest way to not lose work due to any crashes that may occur):-
+1. Open TheGHOST, select "Create a New Project", click "Continue..." and select the path of the project.
+2. Answer "Yes" to keep your imported files with the project. This allows you to make backups or copy the project to another computer.
+3. Set the default options in the Project Settings screen.  Click Next
+4. Set any mods, tier names and background audio, click Next
+5. Drag folders containing audio / Frets On Fire packs on to this screen to map the songs. Once you've added all you require then click Next.
+6. TheGHOST will import all the audio to retrieve the audio lengths. If you have not checked any songs for editing TheGHOST will offer to automatically apply the modified items to the game.  Answer No to this.
+7. Once all the audio has been decoded exit TheGHOST.  This ensures the project has been saved.
+8. Reopen TheGHOST and load the saved project.  Move through the screens until you reach the Progress Screen and click Start.
+9. TheGHOST will apply all the changed items to the game.
+10. Play the game, if anything needs to be changed, simply reload the project and select the songs that need modifying and edit as appropriate.  TheGHOST will only apply settings that have changed.
+
+Why are the song settings duplicated in the project (tgp) and song folders (tgs)?
+- tgs files are created when the project is saved.  They are created so that if you wish to create a compilation of your favourite tracks or give someone a settings file for a song folder you can.
+
+

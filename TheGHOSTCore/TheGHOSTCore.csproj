@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B8CAA64-C1CD-4031-885C-BC7B48825860}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nanook.TheGhost</RootNamespace>
+    <AssemblyName>TheGHOSTCore</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QueenBeeParser, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Backup\My Work\Development\C#\GuitarHero3Custom\DiscBuilder\QueenBee\bin\Release\QueenBeeParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioFile.cs" />
+    <Compile Include="Audio\AudioFileChangedEventArgs.cs" />
+    <Compile Include="Audio\AudioPlayer.cs" />
+    <Compile Include="Audio\WavStatusChangedEventArgs.cs" />
+    <Compile Include="Audio\PreviewSettingsChangedEventArgs.cs" />
+    <Compile Include="Audio\WaveNative.cs" />
+    <Compile Include="Audio\WaveOut.cs" />
+    <Compile Include="Audio\WavProcessor.cs" />
+    <Compile Include="Audio\WavSingleChunkHeader.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="ISettingsChange.cs" />
+    <Compile Include="AudioFileList.cs" />
+    <Compile Include="ProjectBackgroundAudio.cs" />
+    <Compile Include="ProjectSettingsGameMods.cs" />
+    <Compile Include="DatWad\DatItem.cs" />
+    <Compile Include="DatWad\DatWad.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="GameEnum.cs" />
+    <Compile Include="GameFile.cs" />
+    <Compile Include="GameInfo.cs" />
+    <Compile Include="GameMods.cs" />
+    <Compile Include="Notes\Mid.cs" />
+    <Compile Include="Notes\MidNote.cs" />
+    <Compile Include="Notes\NotesGenerator.cs" />
+    <Compile Include="OsInfo.cs" />
+    <Compile Include="PluginInterfaces\IPlugin.cs" />
+    <Compile Include="PluginInterfaces\IPluginAudioExport.cs" />
+    <Compile Include="PluginInterfaces\IPluginAudioImport.cs" />
+    <Compile Include="PluginInterfaces\IPluginFileCopy.cs" />
+    <Compile Include="Notes\Chart.cs" />
+    <Compile Include="Notes\GhItemMappedEventArgs.cs" />
+    <Compile Include="Notes\GhNotesItem.cs" />
+    <Compile Include="Notes\INotesParser.cs" />
+    <Compile Include="Notes\NotesDifficulty.cs" />
+    <Compile Include="Notes\NotesFile.cs" />
+    <Compile Include="Notes\NotesFileChangedEventArgs.cs" />
+    <Compile Include="Notes\NotesFileItem.cs" />
+    <Compile Include="Notes\NotesMarker.cs" />
+    <Compile Include="Notes\NotesTypeEnum.cs" />
+    <Compile Include="PluginInfo.cs" />
+    <Compile Include="PluginManager.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectDefaults.cs" />
+    <Compile Include="ProjectSettings.cs" />
+    <Compile Include="ProjectSong.cs" />
+    <Compile Include="ProjectSongAudio.cs" />
+    <Compile Include="ProjectSongNotes.cs" />
+    <Compile Include="ProjectTier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QbHelpers\SongQb.cs" />
+    <Compile Include="QbHelpers\TierQb.cs" />
+    <Compile Include="ProjectTierSong.cs" />
+    <Compile Include="TheGhostCore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Info\FAQ.txt" />
+    <Content Include="Info\Features.txt" />
+    <Content Include="Info\GH3 to Mid.txt" />
+    <Content Include="Info\Release Notes.txt" />
+    <Content Include="Info\VersionHistory.txt" />
+    <Content Include="Info\Rules.txt" />
+    <Content Include="Info\ToDo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

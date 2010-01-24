@@ -1,0 +1,64 @@
+﻿
+Interface
+ - Drag and Drop style GUI
+ - Support for projects (not fully implemented due to time scales)
+ - Notes Viewer / Editor (adjusts sync, H.O. / P.O.)
+ - Saves and restores default project settings to and from a config file
+ - All audio encoding, file creation and file replacements are performed at the end to prevent waiting around while configuring
+
+Project
+ - Supports default settings
+ - Smart mode can be used for populating songs. Support includes FOF folders, audio, Song.ini chart and mid files)
+
+Files
+ - FSB support (created after encoding audio)
+ - Wad support (created after creating FSB files)
+ - Dat support (created after creating FSB files)
+ - Notes Paks edited using the Queen Bee parser
+ - Qb Pak edited using the Queen Bee parser
+ - Seamless Wii Scrubber support for extracting and replacing files in Wii a ISO.
+ 
+Song (Qb Pak)
+ - rhythm_track - always set to 0
+ - hammer_on_measure_scale - set for all songs
+ - use_coop_notetracks - is always removed if found
+ - band_playback_volume - is editable
+ - guitar_playback_volume - is editable
+ - singer - is selectable
+ - title - is editable
+ - artist - is editable
+ - year - is editable
+ - artist_text - always set to artist_text_by
+
+Audio
+ - Decodes anything Windows Direct Show supports (via Codecs)
+ - Encodes to XBADPCM for Wii audio
+ - Detect and remove silent/duplicate 'filler' audio
+ - Create silent audio for Rhythm audio when not present
+ - Song audio is duplicated (after any filler audio is removed) if the guitar does not exists and the volume is reduced to 50%
+ - Previews are created from combining all audio
+
+Notes
+ - Ensure x seconds before the first note is triggered
+ - Frets before first note are replaced so that if notes are offset that they can be filled with properly spaced frets
+ - Offset notes to ensure frets are naturally spaced (no forces small frets)
+ - Auto calculates frets from audio / last note + sustain lengths
+ - Validates and adjusts Star Power etc to ensure all items have the correct note counts.
+ - Auto maps available difficulties to the required Guitar difficulties.
+ - Generates missing items (Missing difficulties, Star Power, Battle Power, Face Off)
+ - Boss battles are detected and notes removed according to face off sections
+ - Optional sustained notes cropping to GH3 mode
+ 
+Chart
+ - Hammer On / Pull Off support
+ - Face Off Support
+ - Star Power Support
+ - Sustained Notes accurately calculated
+ - Time Sig support
+
+Mid
+ - Face Off Support
+ - Star Power Support
+ - Sustained Notes accurately calculated
+ - Time Sig (denominator always set to 4, like chart) support
+

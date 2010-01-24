@@ -1,0 +1,15 @@
+﻿                                NoteChart chart = new NoteChart();
+                                QbItemInteger fretbars = (qbchart.FindItem(QbKey.Create(dta.BaseName + "_fretbars"), false) as QbItemArray).Items[0] as QbItemInteger;
+                                ulong ticks = 0;
+                                uint previousfret = 0;
+                                uint previousMsPerBeat = 0;
+                                for (int k = 1; k < fretbars.Values.Length; k++) {
+                                        uint fret = fretbars.Values[k];
+                                        uint msPerBeat = fret - previousfret;
+                                        if (msPerBeat != previousMsPerBeat)
+                                                chart.BPM.Add(new Midi.TempoEvent(ticks, msPerBeat * 1000)); // 1000 for microseconds
+ 
+                                        previousfret = fret;
+                                        previousMsPerBeat = msPerBeat;
+                                        ticks += chart.Division.TicksPerBeat; // 1 beat has passed
+                                }

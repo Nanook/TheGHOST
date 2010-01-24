@@ -1,0 +1,219 @@
+<html>
+
+<head>
+<link rel=File-List href="./Tier%20Editing_files/filelist.xml">
+<title>Tier Editing</title>
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:1219247159;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1570723904 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1678848291;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1284095742 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:2058970227;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1182339906 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body lang=EN-GB style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h1>Tier Editing</h1>
+
+<h2><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></h2>
+
+<h2>How do I edit the Tiers?</h2>
+
+<p class=MsoNormal>Open the TheGHOSTWiiIsoTool.<span style="mso-spacerun:
+yes">  </span>Set:-</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo2;tab-stops:list 36.0pt'>TiersCount
+     – Amount of tiers you would like</li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo2;tab-stops:list 36.0pt'>TierSongCount
+     – Set to the amount of songs in the above tiers.<span style="mso-spacerun:
+     yes">  </span>Set “5” for 5 songs per tier or comma separate the values
+     e.g. “5,5,5,5,5,5,5,4”. </li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo2;tab-stops:list 36.0pt'>BonusTierSongsCount
+     – The amount of songs that the bonus tier will contain.</li>
+</ul>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2>Why are the boss battles removed when editing tiers?</h2>
+
+<p class=MsoNormal>The boss battles are removed to simplify the editing
+process. There are checks and flags that indicate that battles exist and how
+they work. They just weren’t worth the work involved to preserve /maintain
+them.</p>
+
+<h2>How do I add songs and keep the boss battles?</h2>
+
+<p class=MsoNormal>Only set BonusTierSongsCount and leave TiersCount and
+TierSongsCount blank. Ensure that RemoveBossBattles is set to No. The ISO being
+modified must currently contain the Boss Battles.</p>
+
+<h2>What is the minimum amount of songs and tiers that can be set?</h2>
+
+<p class=MsoNormal>1 tier with 2 songs - 1 to open the encore and 1 for the
+encore itself. 1 bonus song.</p>
+
+<h2>What is the maximum amount of songs and tiers that can be set?</h2>
+
+<p class=MsoNormal>There is no hard limit. Different combinations of Career
+songs and Bonus songs yield different results.<span style="mso-spacerun: yes"> 
+</span>Even the way the songs are distributed over the tiers can have an
+effect.<span style="mso-spacerun: yes">  </span>There are 2 issues to watch out
+for:</p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'>The
+     save file corrupting. If too many songs are added, the game might play and
+     save, but will hang on reload. When testing be sure to clear out any
+     existing save file as this can interfere with your results.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'>The
+     setlist hangs the instant press the A button to play a song.<span
+     style="mso-spacerun: yes">  </span>This is normally caused by having too
+     many songs in the setlist. Sometimes making less tiers with more songs can
+     work around this.<span style="mso-spacerun: yes">  </span>If the game
+     crashes the instant you move on to it and doesn’t even play the preview
+     then try compacting the ISO with the WiiIsoTool – use the “Compact ISO”
+     preset.<span style="mso-spacerun: yes">  </span>This is an known issue
+     caused by the version of WiiScrubber currently being used.</li>
+</ol>
+
+<h2>Why does the game freeze when I select a song to play?</h2>
+
+<p class=MsoNormal>See the above question, point 2 specifically.</p>
+
+<h2>Why is Through the Fire and Flames (GH3) / Kings and Queens (GHA) moved to
+the end of the setlist?</h2>
+
+<p class=MsoNormal>These 2 songs are unlocked the first time a career setlist
+is completed. Moving them to the end of the career setlist ensures they will
+always be playable without being hidden.</p>
+
+<h2>Why does Kings and Queens (GHA) appear twice?</h2>
+
+<p class=MsoNormal>In GHA kings and queens is included twice. One is the end
+credits version and the other is the version that is unlocked after playing the
+end credits version.<span style="mso-spacerun: yes">  </span>The end credits
+version will always be the last song in the bonus tier. It will still function
+as the end credits song, but you can play it whenever you like.</p>
+
+<h2>Why has the support band check been removed in GHA?</h2>
+
+<p class=MsoNormal>Like the boss battles this was removed to simplify
+editing.<span style="mso-spacerun: yes">  </span>It means TheGHOST can work
+with GH3 and GHA in the same way.</p>
+
+<h2>What happens if I set the tier and song counts and leave the bonus songs
+count blank?</h2>
+
+<p class=MsoNormal>TheGHOST will modify the career tiers by adding or taking
+from the bonus songs. If there are not enough songs in the bonus songs then
+more will be added to ensure there at least 1. </p>
+
+<h2>What happens if I set the bonus songs count and leave the tier and song
+counts blank?</h2>
+
+<p class=MsoNormal>The career tier will be left untouched.<span
+style="mso-spacerun: yes">  </span>Only the bonus songs will be modified.<span
+style="mso-spacerun: yes">  </span>This is the approach to take if you want to
+add songs and keep the boss battles.</p>
+
+<h2>What happens if I set 1 tier with 2 songs then want to add more songs to
+the same ISO later?</h2>
+
+<p class=MsoNormal>TheGHOST will bring back the removed songs in the same order
+they used to be in.</p>
+
+<h2>This sounds very intricate, are there likely to be any bugs?</h2>
+
+<p class=MsoNormal>Probably, this was really complicated to implement due to
+all the combinations. If you find anything, just post it on the ScoreHero
+forum.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

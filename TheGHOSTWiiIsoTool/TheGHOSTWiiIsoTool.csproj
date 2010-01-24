@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CAEFBD22-522E-41D9-9AF3-BBC296F66569}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nanook.TheGhost</RootNamespace>
+    <AssemblyName>TheGHOSTWiiIsoTool</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QueenBeeParser, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Backup\My Work\Development\C#\GuitarHero3Custom\DiscBuilder\QueenBee\bin\Release\QueenBeeParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExceptionMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionMessageForm.designer.cs">
+      <DependentUpon>ExceptionMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrepProperties.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExceptionMessageForm.resx">
+      <DependentUpon>ExceptionMessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WiiIso.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileSystemPlugin\FileSystemPlugin.csproj">
+      <Project>{F2EA7AB1-605E-4339-AC41-9FF00D552036}</Project>
+      <Name>FileSystemPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImaAdpcmPlugin\ImaAdpcmPlugin.csproj">
+      <Project>{A2ADD054-D993-4FFB-A34B-FAFF2AC79292}</Project>
+      <Name>ImaAdpcmPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FFMpegAudioPlugin\FFMpegAudioPlugin.csproj">
+      <Project>{571B7509-4A24-446D-8D60-B7F24CA6437B}</Project>
+      <Name>FFMpegAudioPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheGHOSTCore\TheGHOSTCore.csproj">
+      <Project>{4B8CAA64-C1CD-4031-885C-BC7B48825860}</Project>
+      <Name>TheGHOSTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WiiScrubberPlugin\WiiScrubberPlugin.csproj">
+      <Project>{14F6497C-6B4C-4803-999E-23CAE4AC343C}</Project>
+      <Name>WiiScrubberPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsAudio\WindowsAudio.csproj">
+      <Project>{D7467B78-5E54-47E3-B12D-0F280E912E26}</Project>
+      <Name>WindowsAudio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XbadpcmPlugin\XbadpcmPlugin.csproj">
+      <Project>{6826D022-5193-4DFB-ACFB-D5B1748AC1D2}</Project>
+      <Name>XbadpcmPlugin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

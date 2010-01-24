@@ -1,0 +1,14 @@
+﻿
+- Song audio must always be present
+- If Guitar audio is missing then Song is duplicated
+- Guitar and Rhythm are audio are cropped if longer than the song.
+ - If Rhythm audio is missing then 5 seconds of silence is created and used
+- Section markers are calculated to the nearest Fret bar
+- Fret Bars are removed up to the first note and generated back to the start of the track.
+- The Frets always run past the last note or just before the end of the audio audio (whichever is longer).
+- The audio is padded with silence if it is shorter than the last fret.
+- If there is no TimeSig at position 0 after adjusting the notes/frets etc a 4/4 Time sig at position 0
+- Everything is padded so that there is always a properly spaced fret at position 0
+
+- GH3 sustain clipping ensures sustained notes are always at least 100ms shorter than the position of the next note
+- SP notes are mapped to the nearest preceeding fret and note count recalculated
