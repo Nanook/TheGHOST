@@ -45,7 +45,7 @@ namespace Nanook.TheGhost
             set { _defaults.SongVolume = value; }
         }
 
-        [CategoryAttribute("1. Song"), DescriptionAttribute("Singer, Male or Femail")]
+        [CategoryAttribute("1. Song"), DescriptionAttribute("Singer, Male or Female")]
         public Singer Singer
         {
             get { return _defaults.Singer; }

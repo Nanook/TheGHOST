@@ -211,7 +211,7 @@ namespace Nanook.TheGhost.Plugins
 
         }
 
-        private const int _DataPartition = 1;
+        private const int _DataPartition = 2;
         private int _partitionNo;
         private bool _partitionProven;
 
