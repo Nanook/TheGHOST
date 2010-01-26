@@ -25,6 +25,10 @@ Normalize
 Copyright (c) 1999--2005, Chris Vaill <chrisvaill at gmail>
 Distributed under GPLv2
 
+DirectShowLibNET
+Copyright (c)  DirectShow .NET Team
+Distributed under LGPLv2
+
 
 All the licenses can be found in the distribution. Note that TheGHOST does not
 contain any part of the above components in its binaries.
