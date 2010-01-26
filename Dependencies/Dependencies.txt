@@ -1,0 +1,3 @@
+These dependencies are referenced by TheGHOST's code or required at runtime.
+
+When running they must all be in the same folder as the exes.
